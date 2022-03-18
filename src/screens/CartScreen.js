@@ -6,7 +6,7 @@ import {
   useSearchParams,
   useNavigate,
 } from "react-router-dom";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 import MessageBox from "../components/MessageBox";
 
 export default function CartScreen() {
@@ -28,7 +28,7 @@ export default function CartScreen() {
   }, [dispatch, productId, qty]);
 
   const removeFromCartHandler = (id) => {
-    //delete action
+    dispatch(removeFromCart(id));
   };
 
   const checkoutHandler = () => {
@@ -50,7 +50,7 @@ export default function CartScreen() {
                 <div className="row">
                   <div>
                     <img
-                      src={item.image}
+                      src={"../" + item.image}
                       alt={item.name}
                       className="small"
                     ></img>
