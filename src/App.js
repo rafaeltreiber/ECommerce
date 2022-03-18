@@ -29,6 +29,7 @@ function App() {
         </header>
         <main>
           <Routes>
+            <Route path="/cart" element={<CartScreen />}></Route>
             <Route path="/cart/:id" element={<CartScreen />}></Route>
             <Route path="/product/:id" element={<ProductScreen />}></Route>
             <Route path="/" element={<HomeScreen />}></Route>
